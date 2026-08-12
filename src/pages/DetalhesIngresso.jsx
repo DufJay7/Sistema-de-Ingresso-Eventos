@@ -23,38 +23,63 @@ export default function DetalhesIngresso() {
   };
 
   return (
-    <div>
-      <button onClick={() => navigate('/')}>Voltar para Home</button>
-
-      <h1>{evento.nome}</h1>
-      <img src={evento.imagem} alt={evento.nome} width="300" />
-      <p><strong>Local:</strong> {evento.local}</p>
-      <p><strong>Capacidade:</strong> {evento.capacidade} pessoas</p>
-      <p><strong>Preço unitário:</strong> R$ {evento.preco.toFixed(2)}</p>
-
-      <hr />
-
-      <h2>Selecione a quantidade de ingressos</h2>
-      <div>
-        <button onClick={() => alterarQuantidade(-1)}>-</button>
-        <span> {quantidade} </span>
-        <button onClick={() => alterarQuantidade(1)}>+</button>
-      </div>
-
-      <hr />
-
-      <h3>Total: R$ {total.toFixed(2)}</h3>
-      <button onClick={handleFinalizar}>
-        Finalizar Compra
+    <div className="container detalhe-container">
+      {/* Botão de voltar estilizado */}
+      <button onClick={() => navigate('/')} className="btn-voltar-topo">
+        ← Voltar para eventos
       </button>
 
-      {comprado && (
-        <div>
-          <h3>Compra realizada com sucesso!</h3>
-          <p>Você comprou {quantidade} ingresso(s) para {evento.nome}.</p>
-          <button onClick={() => navigate('/')}>Voltar para a lista de eventos</button>
+      <div className="detalhe-grid">
+        {/* Banner do Evento */}
+        <div className="detalhe-midia">
+          <img src={evento.imagem} alt={evento.nome} className="detalhe-img" />
         </div>
-      )}
+
+        {/* Informações e Compra */}
+        <div className="detalhe-info">
+          <span className="badge-categoria">SHOW</span>
+          <h1 className="detalhe-titulo">{evento.nome}</h1>
+          
+          <div className="detalhe-meta">
+            <p>📍 <strong>Local:</strong> {evento.local}</p>
+            <p>👥 <strong>Capacidade:</strong> {evento.capacidade.toLocaleString('pt-BR')} pessoas</p>
+            <p>🏷️ <strong>Preço unitário:</strong> R$ {evento.preco.toFixed(2).replace('.', ',')}</p>
+          </div>
+
+          <hr className="detalhe-divisor" />
+
+          <div className="checkout-box">
+            <h2>Selecione a quantidade de ingressos</h2>
+            
+            <div className="contador-container">
+              <button onClick={() => alterarQuantidade(-1)} className="btn-qtd">-</button>
+              <span className="qtd-numero"> {quantidade} </span>
+              <button onClick={() => alterarQuantidade(1)} className="btn-qtd">+</button>
+            </div>
+
+            <hr className="detalhe-divisor" />
+
+            <div className="total-box">
+              <span>Total:</span>
+              <h3 className="total-valor">R$ {total.toFixed(2).replace('.', ',')}</h3>
+            </div>
+
+            <button onClick={handleFinalizar} className="buttom-detalhes btn-comprar">
+              Finalizar Compra
+            </button>
+          </div>
+
+          {comprado && (
+            <div className="modal-sucesso">
+              <h3>🎉 Compra realizada com sucesso!</h3>
+              <p>Você comprou {quantidade} ingresso(s) para {evento.nome}.</p>
+              <button onClick={() => navigate('/')} className="btn-sucesso-voltar">
+                Voltar para a lista de eventos
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

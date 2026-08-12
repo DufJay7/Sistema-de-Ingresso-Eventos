@@ -1,111 +1,767 @@
+/* =========================================================
+   VARIÁVEIS PRINCIPAIS DO SISTEMA
+   Define as cores, sombras e configurações usadas no projeto.
+   ========================================================= */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --bg-color: #0d0b18; /* Cor de fundo principal da página */
+  --bg-card: #141026; /* Cor de fundo dos cards */
+  --bg-header: #0a0814; /* Cor de fundo do cabeçalho */
+  --text-main: #ffffff; /* Cor principal dos textos */
+  --text-secondary: #a0a0b8; /* Cor dos textos secundários */
+  --primary: #6d28d9; /* Cor principal dos botões */
+  --primary-hover: #5b21b6; /* Cor dos botões quando passa o mouse */
+  --border-color: #231d3d; /* Cor das bordas */
+  --badge-bg: rgba(0, 0, 0, 0.7); /* Fundo da data sobre a imagem */
+  --badge-text: #ffffff; /* Cor do texto da data */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Sombra dos cards */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* =========================================================
+   TEMA CLARO
+   Altera as cores do sistema quando o tema claro é ativado.
+   ========================================================= */
+
+.light-theme {
+  --bg-color: #f4f5f9; /* Fundo da página no tema claro */
+  --bg-card: #ffffff; /* Fundo dos cards no tema claro */
+  --bg-header: #ffffff; /* Fundo do cabeçalho */
+  --text-main: #0f172a; /* Texto principal escuro */
+  --text-secondary: #475569; /* Texto secundário */
+  --primary: #6d28d9; /* Cor principal */
+  --primary-hover: #5b21b6; /* Cor ao passar o mouse */
+  --border-color: #e2e8f0; /* Bordas claras */
+  --badge-bg: rgba(15, 23, 42, 0.85); /* Fundo da data */
+  --badge-text: #ffffff; /* Texto da data */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
 }
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   Remove margens e espaçamentos padrão do navegador.
+   ========================================================= */
+
+* {
+  box-sizing: border-box; /* Faz o tamanho incluir padding e borda */
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove espaçamento padrão */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Fonte do projeto */
+
+  /* Deixa mudanças de cores mais suaves */
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+
+/* =========================================================
+   BODY
+   Define o fundo e a cor padrão de todo o site.
+   ========================================================= */
 
 body {
-  margin: 0;
+  background-color: var(--bg-color); /* Usa a cor de fundo definida */
+  color: var(--text-main); /* Usa a cor principal do texto */
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+
+/* =========================================================
+   CONTAINER PRINCIPAL DO APP
+   Ocupa no mínimo toda a altura da tela.
+   ========================================================= */
+
+.app-container {
+  min-height: 100vh; /* 100% da altura da tela */
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+
+/* =========================================================
+   HEADER / CABEÇALHO
+   Área superior com logo, menu e botões.
+   ========================================================= */
+
+.header {
+  display: flex; /* Coloca os elementos lado a lado */
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 1rem 3rem; /* Espaçamento interno */
+  background-color: var(--bg-header); /* Fundo do cabeçalho */
+  border-bottom: 1px solid var(--border-color); /* Linha inferior */
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* Área esquerda e direita do cabeçalho */
+
+.header-left,
+.header-right {
+  display: flex; /* Organiza os elementos horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 2rem; /* Espaçamento entre os elementos */
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+
+/* =========================================================
+   LOGO
+   Estiliza o nome/logo do sistema.
+   ========================================================= */
+
+.logo {
+  font-size: 1.4rem; /* Tamanho da logo */
+  font-weight: 800; /* Deixa a logo em negrito */
+  color: var(--text-main); /* Cor da logo */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Organiza conteúdo */
+  align-items: center; /* Centraliza */
+  gap: 8px; /* Espaço entre ícone e texto */
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+
+/* =========================================================
+   LINKS DO MENU
+   ========================================================= */
+
+.nav-links {
+  display: flex; /* Coloca os links lado a lado */
+  gap: 1.5rem; /* Espaço entre os links */
+}
+
+.nav-links a {
+  color: var(--text-secondary); /* Cor dos links */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte */
+}
+
+
+/* Link ativo ou quando o mouse passa por cima */
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--text-main); /* Deixa o texto branco */
+}
+
+
+/* =========================================================
+   PESQUISA DO HEADER
+   Campo de pesquisa presente no cabeçalho.
+   ========================================================= */
+
+.header-search {
+  position: relative; /* Permite posicionar o ícone */
+  display: flex; /* Organiza os elementos */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.header-search input {
+  background: var(--bg-card); /* Fundo do campo */
+  border: 1px solid var(--border-color); /* Borda */
+  padding: 8px 36px 8px 14px; /* Espaçamento interno */
+  border-radius: 20px; /* Deixa o campo arredondado */
+  color: var(--text-main); /* Cor do texto */
+  outline: none; /* Remove contorno padrão */
+}
+
+.header-search span {
+  position: absolute; /* Posiciona o ícone dentro do campo */
+  right: 12px; /* Distância do lado direito */
+  font-size: 0.8rem; /* Tamanho do ícone */
+}
+
+
+/* =========================================================
+   BOTÕES DO USUÁRIO E TEMA
+   ========================================================= */
+
+.btn-user,
+.btn-tema-toggle {
+  background: var(--bg-card); /* Fundo do botão */
+  border: 1px solid var(--border-color); /* Borda */
+  color: var(--text-main); /* Cor do ícone */
+  width: 36px; /* Largura */
+  height: 36px; /* Altura */
+  border-radius: 50%; /* Deixa o botão redondo */
+  cursor: pointer; /* Mostra a mãozinha */
+  display: flex; /* Organiza o conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+
+/* =========================================================
+   HERO SECTION
+   Banner principal da página inicial.
+   ========================================================= */
+
+.hero-section {
+  position: relative; /* Permite trabalhar com elementos internos */
+  
+  /* Imagem de fundo com um degradê escuro */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 11, 24, 0.4) 0%,
+      rgba(13, 11, 24, 1) 100%
+    ),
+
+    url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1400&q=80')
+      center/cover;
+
+  padding: 5rem 3rem; /* Espaçamento interno */
+  border-radius: 0 0 24px 24px; /* Arredonda os cantos inferiores */
+  color: #ffffff; /* Mantém o texto branco */
+}
+
+
+/* Banner quando o tema claro está ativado */
+
+.light-theme .hero-section {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.6) 0%,
+      rgba(244, 245, 249, 1) 100%
+    ),
+
+    url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1400&q=80')
+      center/cover;
+}
+
+
+/* Conteúdo interno do banner */
+
+.hero-content {
+  max-width: 600px; /* Limita a largura do conteúdo */
+}
+
+
+/* Título principal do banner */
+
+.hero-content h1 {
+  font-size: 3rem; /* Tamanho do título */
+  line-height: 1.1; /* Altura das linhas */
+  font-weight: 800; /* Deixa o título forte */
+  margin-bottom: 0.8rem; /* Espaço abaixo */
+  color: #ffffff; /* Texto branco */
+}
+
+
+/* Título no tema claro */
+
+.light-theme .hero-content h1 {
+  color: #0f172a; /* Texto escuro */
+}
+
+
+/* Palavra destacada do título */
+
+.text-highlight {
+  color: #8b5cf6; /* Roxo usado no destaque */
+}
+
+
+/* Texto abaixo do título */
+
+.hero-content p {
+  color: #e2e8f0; /* Cor do texto */
+  font-size: 1.1rem; /* Tamanho */
+  margin-bottom: 2rem; /* Espaço abaixo */
+}
+
+
+/* Texto do banner no tema claro */
+
+.light-theme .hero-content p {
+  color: #475569;
+}
+
+
+/* =========================================================
+   BARRA DE PESQUISA PRINCIPAL
+   Campo usado para procurar eventos.
+   ========================================================= */
+
+.search-bar {
+  display: flex; /* Coloca input e botão lado a lado */
+  background: var(--bg-card); /* Fundo */
+  border: 1px solid var(--border-color); /* Borda */
+  border-radius: 12px; /* Cantos arredondados */
+  padding: 6px; /* Espaçamento interno */
+  max-width: 450px; /* Largura máxima */
+}
+
+
+/* Campo de texto da pesquisa */
+
+.search-bar input {
+  flex: 1; /* Ocupa o espaço disponível */
+  background: transparent; /* Fundo transparente */
+  border: none; /* Remove borda */
+  padding: 10px 14px; /* Espaçamento */
+  color: var(--text-main); /* Cor do texto */
+  outline: none; /* Remove contorno */
+}
+
+
+/* Botão da pesquisa */
+
+.btn-search {
+  background: var(--primary); /* Fundo roxo */
+  border: none; /* Remove borda */
+  padding: 10px 16px; /* Espaçamento */
+  border-radius: 8px; /* Cantos arredondados */
+  cursor: pointer; /* Mostra a mãozinha */
+}
+
+
+/* =========================================================
+   CONTAINER E GRID
+   Organiza os eventos na página.
+   ========================================================= */
+
+.container {
+  max-width: 1280px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 2.5rem 1.5rem; /* Espaçamento */
+}
+
+
+/* Cabeçalho da seção de eventos */
+
+.section-header {
+  display: flex; /* Organiza os elementos */
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 1.5rem; /* Espaço abaixo */
+}
+
+
+/* Select de filtros */
+
+.filter-select {
+  background: var(--bg-card); /* Fundo */
+  color: var(--text-main); /* Texto */
+  border: 1px solid var(--border-color); /* Borda */
+  padding: 8px 16px; /* Espaçamento */
+  border-radius: 8px; /* Cantos arredondados */
+}
+
+
+/* Grid onde os cards dos eventos aparecem */
+
+.grid-ingressos {
+  display: grid; /* Ativa o sistema de grid */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem; /* Espaço entre os cards */
+}
+
+
+/* =========================================================
+   CARD DE INGRESSO
+   Estiliza cada evento apresentado na Home.
+   ========================================================= */
+
+.card-ingresso {
+  background: var(--bg-card); /* Fundo do card */
+  border: 1px solid var(--border-color); /* Borda */
+  border-radius: 16px; /* Cantos arredondados */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+  box-shadow: var(--shadow); /* Sombra */
+  padding: 1rem; /* Espaçamento interno */
+  display: flex; /* Organiza os elementos */
+  flex-direction: column; /* Coloca os elementos em coluna */
+}
+
+
+/* Área onde fica a imagem do evento */
+
+.card-image-wrapper {
+  position: relative; /* Permite colocar a data sobre a imagem */
+  height: 160px; /* Altura da imagem */
+  border-radius: 12px; /* Cantos arredondados */
+  overflow: hidden; /* Mantém a imagem dentro da área */
+  margin-bottom: 1rem; /* Espaço abaixo */
+}
+
+
+/* Imagem do evento */
+
+.card-image {
+  width: 100%; /* Ocupa toda a largura */
+  height: 100%; /* Ocupa toda a altura */
+  object-fit: cover; /* Ajusta a imagem sem deformar */
+}
+
+
+/* =========================================================
+   DATA DO EVENTO
+   Selo que aparece sobre a imagem.
+   ========================================================= */
+
+.card-badge-data {
+  position: absolute; /* Coloca sobre a imagem */
+  top: 10px; /* Distância do topo */
+  left: 10px; /* Distância da esquerda */
+  background: var(--badge-bg); /* Fundo escuro */
+  backdrop-filter: blur(8px); /* Efeito de desfoque */
+  padding: 4px 10px; /* Espaçamento */
+  border-radius: 8px; /* Cantos arredondados */
+  text-align: center; /* Centraliza o texto */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda transparente */
+}
+
+
+/* Dia do evento */
+
+.badge-dia {
+  display: block; /* Ocupa uma linha */
+  font-weight: 800; /* Texto forte */
+  font-size: 1rem; /* Tamanho */
+  color: var(--badge-text); /* Cor branca */
+}
+
+
+/* Mês do evento */
+
+.badge-mes {
+  display: block; /* Ocupa uma linha */
+  font-size: 0.65rem; /* Texto pequeno */
+  color: #cbd5e1; /* Cor cinza clara */
+  text-transform: uppercase; /* Coloca em letras maiúsculas */
+}
+
+
+/* =========================================================
+   NOME E DETALHES DO EVENTO
+   ========================================================= */
+
+.card-nome {
+  font-size: 1.05rem; /* Tamanho do nome */
+  font-weight: 700; /* Negrito */
+  margin-bottom: 0.5rem; /* Espaço abaixo */
+  color: var(--text-main); /* Cor principal */
+}
+
+
+/* Informações como local e preço */
+
+.card-detalhe {
+  color: var(--text-secondary); /* Cor secundária */
+  font-size: 0.85rem; /* Tamanho */
+  margin-bottom: 0.3rem; /* Espaço abaixo */
+}
+
+
+/* Parte em negrito dos detalhes */
+
+.card-detalhe strong {
+  color: var(--text-main); /* Deixa em destaque */
+}
+
+
+/* =========================================================
+   CATEGORIA DO EVENTO
+   Exemplo: SHOW, FESTIVAL ou EVENTO.
+   Agora aparece somente como texto branco.
+   ========================================================= */
+
+.badge-categoria {
+  background: transparent !important; /* Remove o fundo roxo */
+  color: #ffffff !important; /* Mantém o texto branco */
+  padding: 0 !important; /* Remove espaçamento */
+  border-radius: 0 !important; /* Remove formato arredondado */
+  border: none !important; /* Remove qualquer borda */
+  font-size: 0.75rem; /* Tamanho do texto */
+  font-weight: 700; /* Deixa o texto em negrito */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+
+/* =========================================================
+   BOTÃO VER DETALHES
+   Botão usado para abrir os detalhes do evento.
+   ========================================================= */
+
+.buttom-detalhes {
+  display: block; /* Faz o link ocupar uma linha */
+  width: 100%; /* Ocupa toda a largura do card */
+  margin-top: 1rem; /* Espaço acima */
+  padding: 10px 0; /* Espaçamento vertical */
+  background-color: var(--primary); /* Fundo roxo */
+  color: #ffffff !important; /* Texto branco */
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 600; /* Texto em negrito */
+  border-radius: 8px; /* Cantos arredondados */
+  cursor: pointer; /* Mãozinha */
+  border: none; /* Remove borda */
+  transition: background-color 0.2s ease; /* Transição suave */
+}
+
+
+/* Muda a cor do botão quando o mouse passa */
+
+.buttom-detalhes:hover {
+  background-color: var(--primary-hover);
+}
+
+
+/* =========================================================
+   RODAPÉ DE RECURSOS
+   Mostra informações como pagamento seguro e suporte.
+   ========================================================= */
+
+.features-footer {
+  display: flex; /* Coloca os itens lado a lado */
+  justify-content: space-around; /* Distribui os itens */
+  margin-top: 4rem; /* Espaço acima */
+  padding: 2rem; /* Espaçamento interno */
+  background: var(--bg-card); /* Fundo */
+  border: 1px solid var(--border-color); /* Borda */
+  border-radius: 16px; /* Cantos arredondados */
+}
+
+
+/* Cada item do rodapé */
+
+.feature-item {
+  display: flex; /* Organiza ícone e texto */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 1rem; /* Espaço entre ícone e texto */
+}
+
+
+/* Ícone dos recursos */
+
+.feature-icon {
+  font-size: 1.8rem; /* Tamanho do ícone */
+}
+
+
+/* Título dos recursos */
+
+.feature-item strong {
+  display: block; /* Coloca em uma linha */
+  font-size: 0.95rem; /* Tamanho */
+  color: var(--text-main); /* Cor */
+}
+
+
+/* Descrição dos recursos */
+
+.feature-item p {
+  color: var(--text-secondary); /* Cor secundária */
+  font-size: 0.8rem; /* Tamanho pequeno */
+}
+
+
+/* =========================================================
+   PÁGINA DE DETALHES
+   Estilos utilizados quando o usuário abre um evento.
+   ========================================================= */
+
+.detalhe-container {
+  padding-top: 2rem; /* Espaço no topo */
+}
+
+
+/* Botão para voltar */
+
+.btn-voltar-topo {
+  background: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  color: var(--text-secondary); /* Cor do texto */
+  cursor: pointer; /* Mãozinha */
+  font-size: 0.95rem; /* Tamanho */
+  margin-bottom: 1.5rem; /* Espaço abaixo */
+}
+
+
+/* Cor do botão ao passar o mouse */
+
+.btn-voltar-topo:hover {
+  color: var(--text-main);
+}
+
+
+/* Grid da página de detalhes */
+
+.detalhe-grid {
+  display: grid; /* Ativa grid */
+  grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+  gap: 2.5rem; /* Espaço entre as colunas */
+}
+
+
+/* Imagem da página de detalhes */
+
+.detalhe-img {
+  width: 100%; /* Ocupa toda a largura */
+  border-radius: 16px; /* Cantos arredondados */
+  max-height: 420px; /* Altura máxima */
+  object-fit: cover; /* Ajusta a imagem */
+  border: 1px solid var(--border-color); /* Borda */
+}
+
+
+/* =========================================================
+   CATEGORIA NA PÁGINA DE DETALHES
+   Mantém apenas o texto branco.
+   ========================================================= */
+
+.detalhe-grid .badge-categoria {
+  background: transparent !important; /* Remove fundo */
+  color: #ffffff !important; /* Texto branco */
+  padding: 0 !important; /* Remove espaçamento */
+  border: none !important; /* Remove borda */
+  border-radius: 0 !important; /* Remove arredondamento */
+  font-size: 0.75rem; /* Tamanho */
+  font-weight: 700; /* Negrito */
+  letter-spacing: 1px; /* Espaçamento */
+}
+
+
+/* Título da página de detalhes */
+
+.detalhe-titulo {
+  font-size: 2.2rem; /* Tamanho do título */
+  margin: 1rem 0; /* Espaçamento */
+  font-weight: 800; /* Negrito */
+  color: var(--text-main); /* Cor principal */
+}
+
+
+/* Informações do evento */
+
+.detalhe-meta p {
+  margin-bottom: 0.5rem; /* Espaço entre informações */
+  color: var(--text-secondary); /* Cor secundária */
+  font-size: 0.95rem; /* Tamanho */
+}
+
+
+/* Destaques das informações */
+
+.detalhe-meta strong {
+  color: var(--text-main); /* Cor principal */
+}
+
+
+/* =========================================================
+   CAIXA DE COMPRA
+   Área onde o usuário escolhe a quantidade de ingressos.
+   ========================================================= */
+
+.checkout-box {
+  background: var(--bg-card); /* Fundo */
+  padding: 1.5rem; /* Espaçamento */
+  border-radius: 16px; /* Cantos arredondados */
+  border: 1px solid var(--border-color); /* Borda */
+}
+
+
+/* Título da área de compra */
+
+.checkout-box h2 {
+  font-size: 1.1rem; /* Tamanho */
+  margin-bottom: 1rem; /* Espaço abaixo */
+  color: var(--text-main); /* Cor */
+}
+
+
+/* =========================================================
+   CONTADOR DE INGRESSOS
+   Área com os botões + e -.
+   ========================================================= */
+
+.contador-container {
+  display: flex; /* Coloca os elementos lado a lado */
+  align-items: center; /* Centraliza */
+  gap: 0.5rem; /* Espaço */
+}
+
+
+/* Botões de aumentar e diminuir quantidade */
+
+.btn-qtd {
+  background: var(--bg-color); /* Fundo */
+  border: 1px solid var(--border-color); /* Borda */
+  color: var(--text-main); /* Cor */
+  width: 36px; /* Largura */
+  height: 36px; /* Altura */
+  border-radius: 8px; /* Cantos arredondados */
+  font-size: 1.2rem; /* Tamanho do símbolo */
+  cursor: pointer; /* Mãozinha */
+}
+
+
+/* Número da quantidade de ingressos */
+
+.qtd-numero {
+  font-size: 1.2rem; /* Tamanho */
+  font-weight: 700; /* Negrito */
+  color: var(--text-main); /* Cor */
+}
+
+
+/* =========================================================
+   TOTAL DA COMPRA
+   Mostra o valor total dos ingressos.
+   ========================================================= */
+
+.total-box {
+  display: flex; /* Organiza os elementos */
+  justify-content: space-between; /* Um de cada lado */
+  align-items: center; /* Centraliza verticalmente */
+  margin: 1rem 0; /* Espaçamento */
+}
+
+
+/* Texto "Total" */
+
+.total-box span {
+  color: var(--text-secondary); /* Cor secundária */
+}
+
+
+/* Valor total */
+
+.total-valor {
+  font-size: 1.8rem; /* Tamanho grande */
+  color: #7c3aed; /* Cor roxa */
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+   Aparece quando a compra é concluída.
+   ========================================================= */
+
+.modal-sucesso {
+  margin-top: 1.5rem; /* Espaço acima */
+  padding: 1.2rem; /* Espaçamento interno */
+  background: rgba(16, 185, 129, 0.1); /* Fundo verde transparente */
+  border: 1px solid #10b981; /* Borda verde */
+  border-radius: 12px; /* Cantos arredondados */
+  color: var(--text-main); /* Cor do texto */
+}
+
+
+/* Título da mensagem de sucesso */
+
+.modal-sucesso h3 {
+  color: #10b981; /* Verde */
+  margin-bottom: 0.5rem; /* Espaço abaixo */
+}
+
+
+/* Botão para voltar após a compra */
+
+.btn-sucesso-voltar {
+  margin-top: 1rem; /* Espaço acima */
+  background: #10b981; /* Fundo verde */
+  color: #ffffff; /* Texto branco */
+  border: none; /* Remove borda */
+  padding: 8px 16px; /* Espaçamento */
+  border-radius: 8px; /* Cantos arredondados */
+  cursor: pointer; /* Mãozinha */
 }
