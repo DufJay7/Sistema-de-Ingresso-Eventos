@@ -1,16 +1,53 @@
-# React + Vite
+# Sistema de Ingresso de Eventos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto avaliativo do curso, Técnico em Desenvolvimento de Sistemas, do SENAI.
 
-Currently, two official plugins are available:
+## <b>Layout do site</b>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<img width="330" height="341" alt="image" src="https://github.com/user-attachments/assets/5d5b3b0b-89a7-4520-b5f7-a5258f5c943f" />
 
-## React Compiler
+## Tecnologias Utilizadas
+<p>Linguagens</p>
+<ol>
+  <li>HTML 5</li>
+  <li>CSS 3</li>
+  <li>JAVASCRIPT</li>
+</ol>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<p>Frameworks ou Biblioteca</p>
+<ul>
+  <li>REACT</li>
+</ul>
 
-## Expanding the ESLint configuration
+## Como executar
+<p>Baixei o repositório</p>
+<a href="https://github.com/DufJay7/Sistema-de-Ingresso-Eventos">Clique aqui..</a>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Requisitos para o Funcionamento
+<ul>
+  <li>Node Js</li>
+  <li>Dependências: <i>npm install</i></li>
+</ul>
+
+## Aprendizado
+<p>Durante o processo de criação:</p>
+<ul>
+  <li>Reforçamos os conhecimentos da linguagem de marcação: <b>HTML</b></li>
+  <li>Manipulação de estilos <b>CSS</b></li>
+  <li>Conhecimentos básicos de <b>JAVASCRIPT</b> e <b>REACT</b></li>
+  <li>Roteamento de Páginas com: <i>react-router-dom</i></li>
+</ul>
+
+## Autores
+<ul>
+  <li><a href="https://github.com/DufJay7">Daniel de Jesus</a></li>
+</ul>
+<ul>
+  <li><a href="https://github.com/raul05pinheiro05-beep">Raul Pinheiro</a></li>
+</ul>
+<ul>
+  <li><a href="https://github.com/Antonyx78">Antony Gabriel</a></li>
+</ul>
+<ul>
+  <li><a href="https://github.com/itsbrenin">Breno</a></li>
+</ul>
