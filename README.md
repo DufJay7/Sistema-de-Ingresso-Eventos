@@ -49,5 +49,5 @@ Projeto avaliativo do curso, Técnico em Desenvolvimento de Sistemas, do SENAI.
   <li><a href="https://github.com/Antonyx78">Antony Gabriel</a></li>
 </ul>
 <ul>
-  <li><a href="https://github.com/itsbrenin">Breno</a></li>
+  <li><a href="https://github.com/itsbrenin">Breno Reis</a></li>
 </ul>
