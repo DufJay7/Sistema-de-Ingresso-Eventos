@@ -11,7 +11,7 @@ export const eventos = [
     preco: 795.00,
     data: "13",
     mes: "Setembro",
-    imagem: "https://d2j6dbq0eux0bg.cloudfront.net/images/17172599/5406196528.jpg"
+    imagem: "https://creativosbr.com.br/wp-content/uploads/2026/05/Rock-in-Rio-lanca-promocao-em-que-fas-poderao-concorrer-a-pares-de-ingressos.jpeg"
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const eventos = [
     preco: 380.00,
     data: "20",
     mes: "Maio",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsLGiy9kqnbkGJ3NiJSU44MmaHcaAI5qG-U6sPUxZ7gWZWdLUm9p4Va7xp&s=10"
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYjp5bf0kSDneYETDU1w6B00hbEssIIcCPk24kM-M4zDW6jNyZf5qBdjAq&s=10"
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const eventos = [
     preco: 320.00,
     data: "10",
     mes: "Junho",
-    imagem: "https://m.media-amazon.com/images/I/71cRRgxhgQL._AC_UF1000,1000_QL80_.jpg"
+    imagem: "https://viva.com.br/media/_versions/2025/12/iron-maiden-show-brasil_br150605150_widexl.jpg"
   },
   {
     id: 5,
@@ -135,7 +135,7 @@ export const eventos = [
     preco: 680.00,
     data: "12",
     mes: "Novembro",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOoiM-hq_TjnAN5tJ4DV-9NbnfxCeOWl6a8xLsDjD0fg&s=10"
+    imagem: "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/1ee66645-dcba-45bd-8fe9-d28b15b14bb0/compose?aspectRatio=1.78&format=webp&width=1200"
   },
   {
     id: 13,
@@ -146,7 +146,7 @@ export const eventos = [
     preco: 850.00,
     data: "22",
     mes: "Abril",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHEy97UIW35ydP73tGdOiJBXTI6006cR8PCMs-Msg10Q&s=10"
+    imagem: "https://cdn.ome.lt/tkB5ZVaTahlbe32m8Ipm8ROGj1Q=/570x0/smart/filters:format(webp)/uploads/conteudo/fotos/cocahella-2026-onde-assistir-online-gratis.jpg"
   },
   {
     id: 14,
@@ -157,7 +157,7 @@ export const eventos = [
     preco: 360.00,
     data: "08",
     mes: "Julho",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-xUNZXM-CXymY9EMNgzGBhpWbe6rxjmBtxHgM1v4dw&s=10"
+    imagem: "https://static.wixstatic.com/media/d024bf_9c32a8be38b0477496c8e4fa56a3396b~mv2.png/v1/fill/w_980,h_513,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/d024bf_9c32a8be38b0477496c8e4fa56a3396b~mv2.png"
   },
   {
     id: 15,
@@ -223,7 +223,7 @@ export const eventos = [
     preco: 580.00,
     data: "21",
     mes: "Setembro",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1yJZ_eLNmZVmmxjBKcj0M1e4KOKPrc-UJX7XD8WrrDw&s=10"
+    imagem: "https://cdn.getcrowder.com/images/3c13f458-5f23-4135-8ff2-507b25171dd6-theweeknd20261920x720landing.gif"
   },
   {
     id: 21,
@@ -245,7 +245,7 @@ export const eventos = [
     preco: 390.00,
     data: "25",
     mes: "Novembro",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5IuK5Np2XeHVuzdxlVb6H9lxt1UaLVv3z3DT05ikj8w&s=10"
+    imagem: "https://www.thatericalper.com/wp-content/uploads/2024/10/download-1-5.jpg"
   },
   {
     id: 23,
@@ -256,7 +256,7 @@ export const eventos = [
     preco: 310.00,
     data: "14",
     mes: "Junho",
-    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf6Zg69Ktd7q--BpOpJ2UEEahWwaovRGh9m7YHQ5KocQ&s=10"
+    imagem: "https://www.joaorock.com.br/wp-content/themes/jr26/images/2026/thumbjr26.jpg"
   },
   {
     id: 24,
