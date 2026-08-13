@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/home';
+import Inicio from './pages/Inicio';
+import SobreNos from './pages/SobreNos';
+import Contato from './pages/Contato';
 import DetalhesIngresso from './components/DetalhesIngressocomp';
 import Erro from './components/Erro';
 import './index.css';
@@ -18,9 +21,9 @@ function App() {
             </Link>
             <nav className="nav-links">
               <Link to="/">Início</Link>
-              <Link to="/" className="active">Eventos</Link>
-              <Link to="/">Sobre nós</Link>
-              <Link to="/">Contato</Link>
+              <Link to="/eventos">Eventos</Link>
+              <Link to="/sobre">Sobre nós</Link>
+              <Link to="/contato">Contato</Link>
             </nav>
           </div>
 
@@ -30,8 +33,8 @@ function App() {
               <span>🔍</span>
             </div>
             <button className="btn-user">👤</button>
-            <button 
-              onClick={() => setTemaEscuro(!temaEscuro)} 
+            <button
+              onClick={() => setTemaEscuro(!temaEscuro)}
               className="btn-tema-toggle"
               title="Alternar Tema"
             >
@@ -39,10 +42,17 @@ function App() {
             </button>
           </div>
         </header>
-
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Inicio />} />
+
+          <Route path="/eventos" element={<Home />} />
+
           <Route path="/ingresso/:id" element={<DetalhesIngresso />} />
+
+          <Route path="/sobre" element={<SobreNos />} />
+
+          <Route path="/contato" element={<Contato />} />
+
           <Route path="*" element={<Erro />} />
         </Routes>
       </Router>
