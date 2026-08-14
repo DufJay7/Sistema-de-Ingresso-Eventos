@@ -389,5 +389,16 @@ export const eventos = [
     data: "05",
     mes: "Dezembro",
     imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_KBiJm4X3LMM6AZnRQV9OzJ_z8xQ1GmEneRKqUMYeRA&s=10"
+  },
+  {
+    id: 35,
+    nome: "MV Bill",
+    categoria: "Show",
+    local: "Centro Esportivo e Cultura da Bom Jesus",
+    capacidade: 5000,
+    preco: 300.00,
+    data: "23",
+    mes: "Agosto",
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYr6r6uyD0SknOZlhkLg6I1nZ_JadpkPXhv9fTBZGVZA&s=10"
   }
 ];
