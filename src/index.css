@@ -1238,6 +1238,11 @@ body {
   word-break: break-word;
 }
 
+/* Animação dos Cards */
+.card-ingresso:hover {
+  transform: translateY(-10px);
+}
+
 /* =========================
    RESPONSIVIDADE
 ========================= */
