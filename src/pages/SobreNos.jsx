@@ -161,11 +161,11 @@ function SobreNos() {
 
           <div className="tecnologias">
 
-            <span>React.js</span>
-            <span>JavaScript</span>
-            <span>JSX</span>
-            <span>CSS</span>
-            <span>Vite</span>
+            <span className="react">React.js</span>
+            <span className="javascript">JavaScript</span>
+            <span className="jsx">JSX</span>
+            <span className="css">CSS</span>
+            <span className="vite">Vite</span>
 
           </div>
 

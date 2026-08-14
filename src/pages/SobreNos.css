@@ -1,0 +1,473 @@
+.sobre-container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.sobre-hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 90px 30px 80px;
+  text-align: center;
+}
+
+.sobre-tag,
+.sobre-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: var(--accent);
+}
+
+.sobre-hero h1 {
+  margin: 0 auto 25px;
+
+  max-width: 800px;
+
+  font-size: 58px;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  font-weight: 700;
+
+  color: var(--text-h);
+}
+
+.sobre-hero h1 span,
+.sobre-hero h2 span,
+.sobre-texto h2 span,
+.sobre-projeto h2 span,
+.sobre-final h2 span {
+  color: var(--accent);
+}
+
+.sobre-hero p {
+  max-width: 650px;
+  margin: auto;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   INTRODUÇÃO
+========================================= */
+
+.sobre-introducao {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 70px 30px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.sobre-texto {
+  text-align: left;
+}
+
+.sobre-texto h2 {
+  margin: 0 0 25px;
+
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+
+  color: var(--text-h);
+}
+
+.sobre-texto p {
+  margin-bottom: 18px;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CARD DESTAQUE
+========================================= */
+
+.sobre-destaque {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 45px;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  background: var(--accent-bg);
+
+  text-align: left;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sobre-destaque:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  background-color: #100133;
+}
+
+.destaque-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
+
+  margin-bottom: 25px;
+
+  border-radius: 12px;
+
+  background: var(--accent);
+
+  font-size: 25px;
+}
+
+.sobre-destaque h3 {
+  margin: 0 0 20px;
+
+  font-size: 28px;
+  line-height: 1.25;
+
+  color: var(--text-h);
+}
+
+.sobre-destaque p {
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PROPOSTA
+========================================= */
+
+.sobre-proposta {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 80px 30px;
+}
+
+.sobre-titulo {
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+.sobre-titulo h2 {
+  margin: 0 0 15px;
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  color: var(--text-h);
+}
+
+.sobre-titulo p {
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.sobre-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sobre-card {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--bg);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sobre-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+  background-color: #100133;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: var(--accent-bg);
+
+  font-size: 22px;
+}
+
+.sobre-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+
+  color: var(--text-h);
+}
+
+.sobre-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   DESENVOLVIMENTO
+========================================= */
+
+.sobre-projeto {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.projeto-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 75px 30px;
+
+  text-align: center;
+}
+
+.projeto-conteudo h2 {
+  margin: 0 auto 20px;
+
+  max-width: 700px;
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  color: var(--text-h);
+}
+
+.projeto-conteudo p {
+  max-width: 700px;
+  margin: 0 auto;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TECNOLOGIAS
+========================================= */
+
+.tecnologias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.tecnologias span {
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  background: var(--accent-bg);
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SEÇÃO FINAL
+========================================= */
+
+.sobre-final {
+  max-width: 800px;
+  margin: 0 auto;
+
+  padding: 90px 30px;
+
+  text-align: center;
+}
+
+.sobre-final h2 {
+  margin: 0 0 20px;
+
+  font-size: 42px;
+  line-height: 1.1;
+
+  color: var(--text-h);
+}
+
+.sobre-final p {
+  margin-bottom: 30px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+.sobre-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 13px 25px;
+
+  border-radius: 7px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sobre-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.sobre-button span {
+  font-size: 20px;
+}
+
+.react:hover {
+    background-color: #100133;
+}
+
+.javascript:hover {
+    background-color: #100133;
+}
+
+.jsx:hover {
+    background-color: #100133;
+}
+
+.css:hover {
+    background-color: #100133;
+}
+
+.vite:hover {
+    background-color: #100133;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .sobre-hero {
+    padding: 65px 25px;
+  }
+
+  .sobre-hero h1 {
+    font-size: 42px;
+  }
+
+  .sobre-introducao {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sobre-texto h2,
+  .sobre-titulo h2,
+  .projeto-conteudo h2 {
+    font-size: 32px;
+  }
+
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-destaque {
+    padding: 35px;
+  }
+
+  .sobre-final h2 {
+    font-size: 35px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .sobre-hero h1 {
+    font-size: 35px;
+    letter-spacing: -1px;
+  }
+
+  .sobre-hero p {
+    font-size: 16px;
+  }
+
+  .sobre-introducao,
+  .sobre-proposta {
+    padding: 55px 20px;
+  }
+
+  .sobre-texto h2,
+  .sobre-titulo h2,
+  .projeto-conteudo h2 {
+    font-size: 28px;
+  }
+
+  .sobre-destaque {
+    padding: 25px;
+  }
+
+  .sobre-final {
+    padding: 65px 20px;
+  }
+}
