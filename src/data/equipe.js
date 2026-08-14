@@ -14,6 +14,15 @@ const equipe = [
     linkedin: "",
     github: "https://github.com/Raul-Pinheiro",
     email: "raul05.pinheiro05@gmail.com"
+  },
+  {
+    nome: "Daniel de Jesus",
+    cargo: "Dev. Sistemas",
+    foto: "https://avatars.githubusercontent.com/u/54826377?v=4",
+    linkedin: "linkedin.com/in/daniel-de-jesus-6b570223a",
+    github: "https://github.com/DufJay7",
+    email: "danieldufjay@hotmail.com"
+
   }
 ];
 
