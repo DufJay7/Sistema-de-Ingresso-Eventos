@@ -1,767 +1,1257 @@
-/* =========================================================
-   VARIÁVEIS PRINCIPAIS DO SISTEMA
-   Define as cores, sombras e configurações usadas no projeto.
-   ========================================================= */
-
 :root {
-  --bg-color: #0d0b18; /* Cor de fundo principal da página */
-  --bg-card: #141026; /* Cor de fundo dos cards */
-  --bg-header: #0a0814; /* Cor de fundo do cabeçalho */
-  --text-main: #ffffff; /* Cor principal dos textos */
-  --text-secondary: #a0a0b8; /* Cor dos textos secundários */
-  --primary: #6d28d9; /* Cor principal dos botões */
-  --primary-hover: #5b21b6; /* Cor dos botões quando passa o mouse */
-  --border-color: #231d3d; /* Cor das bordas */
-  --badge-bg: rgba(0, 0, 0, 0.7); /* Fundo da data sobre a imagem */
-  --badge-text: #ffffff; /* Cor do texto da data */
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Sombra dos cards */
+  --bg-color: #0d0b18;
+  --bg-card: #141026;
+  --bg-header: #0a0814;
+  --text-main: #ffffff;
+  --text-secondary: #a0a0b8;
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --border-color: #231d3d;
+  --badge-bg: rgba(0, 0, 0, 0.7);
+  --badge-text: #ffffff;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
-
-/* =========================================================
-   TEMA CLARO
-   Altera as cores do sistema quando o tema claro é ativado.
-   ========================================================= */
 
 .light-theme {
-  --bg-color: #f4f5f9; /* Fundo da página no tema claro */
-  --bg-card: #ffffff; /* Fundo dos cards no tema claro */
-  --bg-header: #ffffff; /* Fundo do cabeçalho */
-  --text-main: #0f172a; /* Texto principal escuro */
-  --text-secondary: #475569; /* Texto secundário */
-  --primary: #6d28d9; /* Cor principal */
-  --primary-hover: #5b21b6; /* Cor ao passar o mouse */
-  --border-color: #e2e8f0; /* Bordas claras */
-  --badge-bg: rgba(15, 23, 42, 0.85); /* Fundo da data */
-  --badge-text: #ffffff; /* Texto da data */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+  --bg-color: #f4f5f9;
+  --bg-card: #ffffff;
+  --bg-header: #ffffff;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --border-color: #e2e8f0;
+  --badge-bg: rgba(15, 23, 42, 0.85);
+  --badge-text: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
-
-/* =========================================================
-   CONFIGURAÇÕES GERAIS
-   Remove margens e espaçamentos padrão do navegador.
-   ========================================================= */
 
 * {
-  box-sizing: border-box; /* Faz o tamanho incluir padding e borda */
-  margin: 0; /* Remove margem padrão */
-  padding: 0; /* Remove espaçamento padrão */
-  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Fonte do projeto */
-
-  /* Deixa mudanças de cores mais suaves */
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color .2s, color .2s, border-color .2s;
 }
-
-
-/* =========================================================
-   BODY
-   Define o fundo e a cor padrão de todo o site.
-   ========================================================= */
 
 body {
-  background-color: var(--bg-color); /* Usa a cor de fundo definida */
-  color: var(--text-main); /* Usa a cor principal do texto */
+  background-color: var(--bg-color);
+  color: var(--text-main);
 }
-
-
-/* =========================================================
-   CONTAINER PRINCIPAL DO APP
-   Ocupa no mínimo toda a altura da tela.
-   ========================================================= */
 
 .app-container {
-  min-height: 100vh; /* 100% da altura da tela */
+  min-height: 100vh;
 }
 
-
-/* =========================================================
-   HEADER / CABEÇALHO
-   Área superior com logo, menu e botões.
-   ========================================================= */
+/* HEADER */
 
 .header {
-  display: flex; /* Coloca os elementos lado a lado */
-  justify-content: space-between; /* Espaça os elementos */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 1rem 3rem; /* Espaçamento interno */
-  background-color: var(--bg-header); /* Fundo do cabeçalho */
-  border-bottom: 1px solid var(--border-color); /* Linha inferior */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
 }
-
-
-/* Área esquerda e direita do cabeçalho */
 
 .header-left,
 .header-right {
-  display: flex; /* Organiza os elementos horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  gap: 2rem; /* Espaçamento entre os elementos */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
-
-
-/* =========================================================
-   LOGO
-   Estiliza o nome/logo do sistema.
-   ========================================================= */
 
 .logo {
-  font-size: 1.4rem; /* Tamanho da logo */
-  font-weight: 800; /* Deixa a logo em negrito */
-  color: var(--text-main); /* Cor da logo */
-  text-decoration: none; /* Remove sublinhado */
-  display: flex; /* Organiza conteúdo */
-  align-items: center; /* Centraliza */
-  gap: 8px; /* Espaço entre ícone e texto */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
 }
 
-
-/* =========================================================
-   LINKS DO MENU
-   ========================================================= */
-
 .nav-links {
-  display: flex; /* Coloca os links lado a lado */
-  gap: 1.5rem; /* Espaço entre os links */
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-  color: var(--text-secondary); /* Cor dos links */
-  text-decoration: none; /* Remove sublinhado */
-  font-size: 0.95rem; /* Tamanho da fonte */
-  font-weight: 500; /* Peso da fonte */
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
 }
-
-
-/* Link ativo ou quando o mouse passa por cima */
 
 .nav-links a.active,
 .nav-links a:hover {
-  color: var(--text-main); /* Deixa o texto branco */
+  color: var(--text-main);
 }
 
-
-/* =========================================================
-   PESQUISA DO HEADER
-   Campo de pesquisa presente no cabeçalho.
-   ========================================================= */
+/* PESQUISA HEADER */
 
 .header-search {
-  position: relative; /* Permite posicionar o ícone */
-  display: flex; /* Organiza os elementos */
-  align-items: center; /* Centraliza verticalmente */
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .header-search input {
-  background: var(--bg-card); /* Fundo do campo */
-  border: 1px solid var(--border-color); /* Borda */
-  padding: 8px 36px 8px 14px; /* Espaçamento interno */
-  border-radius: 20px; /* Deixa o campo arredondado */
-  color: var(--text-main); /* Cor do texto */
-  outline: none; /* Remove contorno padrão */
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 8px 36px 8px 14px;
+  border-radius: 20px;
+  color: var(--text-main);
+  outline: none;
 }
 
 .header-search span {
-  position: absolute; /* Posiciona o ícone dentro do campo */
-  right: 12px; /* Distância do lado direito */
-  font-size: 0.8rem; /* Tamanho do ícone */
+  position: absolute;
+  right: 12px;
+  font-size: .8rem;
 }
 
-
-/* =========================================================
-   BOTÕES DO USUÁRIO E TEMA
-   ========================================================= */
+/* BOTÕES HEADER */
 
 .btn-user,
 .btn-tema-toggle {
-  background: var(--bg-card); /* Fundo do botão */
-  border: 1px solid var(--border-color); /* Borda */
-  color: var(--text-main); /* Cor do ícone */
-  width: 36px; /* Largura */
-  height: 36px; /* Altura */
-  border-radius: 50%; /* Deixa o botão redondo */
-  cursor: pointer; /* Mostra a mãozinha */
-  display: flex; /* Organiza o conteúdo */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-main);
+  cursor: pointer;
 }
 
-
-/* =========================================================
-   HERO SECTION
-   Banner principal da página inicial.
-   ========================================================= */
+/* HERO */
 
 .hero-section {
-  position: relative; /* Permite trabalhar com elementos internos */
-  
-  /* Imagem de fundo com um degradê escuro */
+  position: relative;
+  padding: 5rem 3rem;
+  border-radius: 0 0 24px 24px;
+  color: #fff;
   background:
     linear-gradient(
       180deg,
-      rgba(13, 11, 24, 0.4) 0%,
+      rgba(13, 11, 24, .4) 0%,
       rgba(13, 11, 24, 1) 100%
     ),
-
     url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1400&q=80')
-      center/cover;
-
-  padding: 5rem 3rem; /* Espaçamento interno */
-  border-radius: 0 0 24px 24px; /* Arredonda os cantos inferiores */
-  color: #ffffff; /* Mantém o texto branco */
+    center/cover;
 }
-
-
-/* Banner quando o tema claro está ativado */
 
 .light-theme .hero-section {
   background:
     linear-gradient(
       180deg,
-      rgba(15, 23, 42, 0.6) 0%,
+      rgba(15, 23, 42, .6) 0%,
       rgba(244, 245, 249, 1) 100%
     ),
-
     url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1400&q=80')
-      center/cover;
+    center/cover;
 }
-
-
-/* Conteúdo interno do banner */
 
 .hero-content {
-  max-width: 600px; /* Limita a largura do conteúdo */
+  max-width: 600px;
 }
-
-
-/* Título principal do banner */
 
 .hero-content h1 {
-  font-size: 3rem; /* Tamanho do título */
-  line-height: 1.1; /* Altura das linhas */
-  font-weight: 800; /* Deixa o título forte */
-  margin-bottom: 0.8rem; /* Espaço abaixo */
-  color: #ffffff; /* Texto branco */
+  margin-bottom: .8rem;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #fff;
 }
-
-
-/* Título no tema claro */
 
 .light-theme .hero-content h1 {
-  color: #0f172a; /* Texto escuro */
+  color: #0f172a;
 }
-
-
-/* Palavra destacada do título */
 
 .text-highlight {
-  color: #8b5cf6; /* Roxo usado no destaque */
+  color: #8b5cf6;
 }
-
-
-/* Texto abaixo do título */
 
 .hero-content p {
-  color: #e2e8f0; /* Cor do texto */
-  font-size: 1.1rem; /* Tamanho */
-  margin-bottom: 2rem; /* Espaço abaixo */
+  margin-bottom: 2rem;
+  color: #e2e8f0;
+  font-size: 1.1rem;
 }
-
-
-/* Texto do banner no tema claro */
 
 .light-theme .hero-content p {
   color: #475569;
 }
 
-
-/* =========================================================
-   BARRA DE PESQUISA PRINCIPAL
-   Campo usado para procurar eventos.
-   ========================================================= */
+/* PESQUISA PRINCIPAL */
 
 .search-bar {
-  display: flex; /* Coloca input e botão lado a lado */
-  background: var(--bg-card); /* Fundo */
-  border: 1px solid var(--border-color); /* Borda */
-  border-radius: 12px; /* Cantos arredondados */
-  padding: 6px; /* Espaçamento interno */
-  max-width: 450px; /* Largura máxima */
+  display: flex;
+  max-width: 450px;
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
 }
-
-
-/* Campo de texto da pesquisa */
 
 .search-bar input {
-  flex: 1; /* Ocupa o espaço disponível */
-  background: transparent; /* Fundo transparente */
-  border: none; /* Remove borda */
-  padding: 10px 14px; /* Espaçamento */
-  color: var(--text-main); /* Cor do texto */
-  outline: none; /* Remove contorno */
+  flex: 1;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  outline: none;
 }
-
-
-/* Botão da pesquisa */
 
 .btn-search {
-  background: var(--primary); /* Fundo roxo */
-  border: none; /* Remove borda */
-  padding: 10px 16px; /* Espaçamento */
-  border-radius: 8px; /* Cantos arredondados */
-  cursor: pointer; /* Mostra a mãozinha */
+  padding: 10px 16px;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-
-/* =========================================================
-   CONTAINER E GRID
-   Organiza os eventos na página.
-   ========================================================= */
+/* CONTAINER / GRID */
 
 .container {
-  max-width: 1280px; /* Largura máxima */
-  margin: 0 auto; /* Centraliza o conteúdo */
-  padding: 2.5rem 1.5rem; /* Espaçamento */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
 }
-
-
-/* Cabeçalho da seção de eventos */
 
 .section-header {
-  display: flex; /* Organiza os elementos */
-  justify-content: space-between; /* Espaça os elementos */
-  align-items: center; /* Centraliza verticalmente */
-  margin-bottom: 1.5rem; /* Espaço abaixo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
-
-
-/* Select de filtros */
 
 .filter-select {
-  background: var(--bg-card); /* Fundo */
-  color: var(--text-main); /* Texto */
-  border: 1px solid var(--border-color); /* Borda */
-  padding: 8px 16px; /* Espaçamento */
-  border-radius: 8px; /* Cantos arredondados */
+  padding: 8px 16px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
-
-
-/* Grid onde os cards dos eventos aparecem */
 
 .grid-ingressos {
-  display: grid; /* Ativa o sistema de grid */
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem; /* Espaço entre os cards */
+  gap: 1.5rem;
 }
 
-
-/* =========================================================
-   CARD DE INGRESSO
-   Estiliza cada evento apresentado na Home.
-   ========================================================= */
+/* CARDS */
 
 .card-ingresso {
-  background: var(--bg-card); /* Fundo do card */
-  border: 1px solid var(--border-color); /* Borda */
-  border-radius: 16px; /* Cantos arredondados */
-  overflow: hidden; /* Esconde conteúdo que ultrapassa */
-  box-shadow: var(--shadow); /* Sombra */
-  padding: 1rem; /* Espaçamento interno */
-  display: flex; /* Organiza os elementos */
-  flex-direction: column; /* Coloca os elementos em coluna */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
-
-
-/* Área onde fica a imagem do evento */
 
 .card-image-wrapper {
-  position: relative; /* Permite colocar a data sobre a imagem */
-  height: 160px; /* Altura da imagem */
-  border-radius: 12px; /* Cantos arredondados */
-  overflow: hidden; /* Mantém a imagem dentro da área */
-  margin-bottom: 1rem; /* Espaço abaixo */
+  position: relative;
+  height: 160px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
 }
-
-
-/* Imagem do evento */
 
 .card-image {
-  width: 100%; /* Ocupa toda a largura */
-  height: 100%; /* Ocupa toda a altura */
-  object-fit: cover; /* Ajusta a imagem sem deformar */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-
-/* =========================================================
-   DATA DO EVENTO
-   Selo que aparece sobre a imagem.
-   ========================================================= */
 
 .card-badge-data {
-  position: absolute; /* Coloca sobre a imagem */
-  top: 10px; /* Distância do topo */
-  left: 10px; /* Distância da esquerda */
-  background: var(--badge-bg); /* Fundo escuro */
-  backdrop-filter: blur(8px); /* Efeito de desfoque */
-  padding: 4px 10px; /* Espaçamento */
-  border-radius: 8px; /* Cantos arredondados */
-  text-align: center; /* Centraliza o texto */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda transparente */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  background: var(--badge-bg);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  text-align: center;
 }
-
-
-/* Dia do evento */
 
 .badge-dia {
-  display: block; /* Ocupa uma linha */
-  font-weight: 800; /* Texto forte */
-  font-size: 1rem; /* Tamanho */
-  color: var(--badge-text); /* Cor branca */
+  display: block;
+  color: var(--badge-text);
+  font-size: 1rem;
+  font-weight: 800;
 }
-
-
-/* Mês do evento */
 
 .badge-mes {
-  display: block; /* Ocupa uma linha */
-  font-size: 0.65rem; /* Texto pequeno */
-  color: #cbd5e1; /* Cor cinza clara */
-  text-transform: uppercase; /* Coloca em letras maiúsculas */
+  display: block;
+  color: #cbd5e1;
+  font-size: .65rem;
+  text-transform: uppercase;
 }
-
-
-/* =========================================================
-   NOME E DETALHES DO EVENTO
-   ========================================================= */
 
 .card-nome {
-  font-size: 1.05rem; /* Tamanho do nome */
-  font-weight: 700; /* Negrito */
-  margin-bottom: 0.5rem; /* Espaço abaixo */
-  color: var(--text-main); /* Cor principal */
+  margin-bottom: .5rem;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
-
-
-/* Informações como local e preço */
 
 .card-detalhe {
-  color: var(--text-secondary); /* Cor secundária */
-  font-size: 0.85rem; /* Tamanho */
-  margin-bottom: 0.3rem; /* Espaço abaixo */
+  margin-bottom: .3rem;
+  color: var(--text-secondary);
+  font-size: .85rem;
 }
-
-
-/* Parte em negrito dos detalhes */
 
 .card-detalhe strong {
-  color: var(--text-main); /* Deixa em destaque */
+  color: var(--text-main);
 }
 
-
-/* =========================================================
-   CATEGORIA DO EVENTO
-   Exemplo: SHOW, FESTIVAL ou EVENTO.
-   Agora aparece somente como texto branco.
-   ========================================================= */
-
-.badge-categoria {
-  background: transparent !important; /* Remove o fundo roxo */
-  color: #ffffff !important; /* Mantém o texto branco */
-  padding: 0 !important; /* Remove espaçamento */
-  border-radius: 0 !important; /* Remove formato arredondado */
-  border: none !important; /* Remove qualquer borda */
-  font-size: 0.75rem; /* Tamanho do texto */
-  font-weight: 700; /* Deixa o texto em negrito */
-  letter-spacing: 1px; /* Espaçamento entre letras */
+.badge-categoria,
+.detalhe-grid .badge-categoria {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-
-/* =========================================================
-   BOTÃO VER DETALHES
-   Botão usado para abrir os detalhes do evento.
-   ========================================================= */
+/* BOTÃO DETALHES */
 
 .buttom-detalhes {
-  display: block; /* Faz o link ocupar uma linha */
-  width: 100%; /* Ocupa toda a largura do card */
-  margin-top: 1rem; /* Espaço acima */
-  padding: 10px 0; /* Espaçamento vertical */
-  background-color: var(--primary); /* Fundo roxo */
-  color: #ffffff !important; /* Texto branco */
-  text-align: center; /* Centraliza o texto */
-  text-decoration: none; /* Remove sublinhado */
-  font-weight: 600; /* Texto em negrito */
-  border-radius: 8px; /* Cantos arredondados */
-  cursor: pointer; /* Mãozinha */
-  border: none; /* Remove borda */
-  transition: background-color 0.2s ease; /* Transição suave */
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 10px 0;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .2s ease;
 }
-
-
-/* Muda a cor do botão quando o mouse passa */
 
 .buttom-detalhes:hover {
-  background-color: var(--primary-hover);
+  background: var(--primary-hover);
 }
 
-
-/* =========================================================
-   RODAPÉ DE RECURSOS
-   Mostra informações como pagamento seguro e suporte.
-   ========================================================= */
+/* RODAPÉ */
 
 .features-footer {
-  display: flex; /* Coloca os itens lado a lado */
-  justify-content: space-around; /* Distribui os itens */
-  margin-top: 4rem; /* Espaço acima */
-  padding: 2rem; /* Espaçamento interno */
-  background: var(--bg-card); /* Fundo */
-  border: 1px solid var(--border-color); /* Borda */
-  border-radius: 16px; /* Cantos arredondados */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
 }
-
-
-/* Cada item do rodapé */
 
 .feature-item {
-  display: flex; /* Organiza ícone e texto */
-  align-items: center; /* Centraliza verticalmente */
-  gap: 1rem; /* Espaço entre ícone e texto */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-
-
-/* Ícone dos recursos */
 
 .feature-icon {
-  font-size: 1.8rem; /* Tamanho do ícone */
+  font-size: 1.8rem;
 }
-
-
-/* Título dos recursos */
 
 .feature-item strong {
-  display: block; /* Coloca em uma linha */
-  font-size: 0.95rem; /* Tamanho */
-  color: var(--text-main); /* Cor */
+  display: block;
+  color: var(--text-main);
+  font-size: .95rem;
 }
-
-
-/* Descrição dos recursos */
 
 .feature-item p {
-  color: var(--text-secondary); /* Cor secundária */
-  font-size: 0.8rem; /* Tamanho pequeno */
+  color: var(--text-secondary);
+  font-size: .8rem;
 }
 
-
-/* =========================================================
-   PÁGINA DE DETALHES
-   Estilos utilizados quando o usuário abre um evento.
-   ========================================================= */
+/* PÁGINA DE DETALHES */
 
 .detalhe-container {
-  padding-top: 2rem; /* Espaço no topo */
+  padding-top: 2rem;
 }
-
-
-/* Botão para voltar */
 
 .btn-voltar-topo {
-  background: transparent; /* Fundo transparente */
-  border: none; /* Sem borda */
-  color: var(--text-secondary); /* Cor do texto */
-  cursor: pointer; /* Mãozinha */
-  font-size: 0.95rem; /* Tamanho */
-  margin-bottom: 1.5rem; /* Espaço abaixo */
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: .95rem;
+  cursor: pointer;
 }
-
-
-/* Cor do botão ao passar o mouse */
 
 .btn-voltar-topo:hover {
   color: var(--text-main);
 }
 
-
-/* Grid da página de detalhes */
-
 .detalhe-grid {
-  display: grid; /* Ativa grid */
-  grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
-  gap: 2.5rem; /* Espaço entre as colunas */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
 }
-
-
-/* Imagem da página de detalhes */
 
 .detalhe-img {
-  width: 100%; /* Ocupa toda a largura */
-  border-radius: 16px; /* Cantos arredondados */
-  max-height: 420px; /* Altura máxima */
-  object-fit: cover; /* Ajusta a imagem */
-  border: 1px solid var(--border-color); /* Borda */
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
 }
-
-
-/* =========================================================
-   CATEGORIA NA PÁGINA DE DETALHES
-   Mantém apenas o texto branco.
-   ========================================================= */
-
-.detalhe-grid .badge-categoria {
-  background: transparent !important; /* Remove fundo */
-  color: #ffffff !important; /* Texto branco */
-  padding: 0 !important; /* Remove espaçamento */
-  border: none !important; /* Remove borda */
-  border-radius: 0 !important; /* Remove arredondamento */
-  font-size: 0.75rem; /* Tamanho */
-  font-weight: 700; /* Negrito */
-  letter-spacing: 1px; /* Espaçamento */
-}
-
-
-/* Título da página de detalhes */
 
 .detalhe-titulo {
-  font-size: 2.2rem; /* Tamanho do título */
-  margin: 1rem 0; /* Espaçamento */
-  font-weight: 800; /* Negrito */
-  color: var(--text-main); /* Cor principal */
+  margin: 1rem 0;
+  color: var(--text-main);
+  font-size: 2.2rem;
+  font-weight: 800;
 }
-
-
-/* Informações do evento */
 
 .detalhe-meta p {
-  margin-bottom: 0.5rem; /* Espaço entre informações */
-  color: var(--text-secondary); /* Cor secundária */
-  font-size: 0.95rem; /* Tamanho */
+  margin-bottom: .5rem;
+  color: var(--text-secondary);
+  font-size: .95rem;
 }
-
-
-/* Destaques das informações */
 
 .detalhe-meta strong {
-  color: var(--text-main); /* Cor principal */
+  color: var(--text-main);
 }
 
-
-/* =========================================================
-   CAIXA DE COMPRA
-   Área onde o usuário escolhe a quantidade de ingressos.
-   ========================================================= */
+/* COMPRA */
 
 .checkout-box {
-  background: var(--bg-card); /* Fundo */
-  padding: 1.5rem; /* Espaçamento */
-  border-radius: 16px; /* Cantos arredondados */
-  border: 1px solid var(--border-color); /* Borda */
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
 }
-
-
-/* Título da área de compra */
 
 .checkout-box h2 {
-  font-size: 1.1rem; /* Tamanho */
-  margin-bottom: 1rem; /* Espaço abaixo */
-  color: var(--text-main); /* Cor */
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
 }
-
-
-/* =========================================================
-   CONTADOR DE INGRESSOS
-   Área com os botões + e -.
-   ========================================================= */
 
 .contador-container {
-  display: flex; /* Coloca os elementos lado a lado */
-  align-items: center; /* Centraliza */
-  gap: 0.5rem; /* Espaço */
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
-
-
-/* Botões de aumentar e diminuir quantidade */
 
 .btn-qtd {
-  background: var(--bg-color); /* Fundo */
-  border: 1px solid var(--border-color); /* Borda */
-  color: var(--text-main); /* Cor */
-  width: 36px; /* Largura */
-  height: 36px; /* Altura */
-  border-radius: 8px; /* Cantos arredondados */
-  font-size: 1.2rem; /* Tamanho do símbolo */
-  cursor: pointer; /* Mãozinha */
+  width: 36px;
+  height: 36px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  cursor: pointer;
 }
-
-
-/* Número da quantidade de ingressos */
 
 .qtd-numero {
-  font-size: 1.2rem; /* Tamanho */
-  font-weight: 700; /* Negrito */
-  color: var(--text-main); /* Cor */
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
-
-
-/* =========================================================
-   TOTAL DA COMPRA
-   Mostra o valor total dos ingressos.
-   ========================================================= */
 
 .total-box {
-  display: flex; /* Organiza os elementos */
-  justify-content: space-between; /* Um de cada lado */
-  align-items: center; /* Centraliza verticalmente */
-  margin: 1rem 0; /* Espaçamento */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
 }
-
-
-/* Texto "Total" */
 
 .total-box span {
-  color: var(--text-secondary); /* Cor secundária */
+  color: var(--text-secondary);
 }
-
-
-/* Valor total */
 
 .total-valor {
-  font-size: 1.8rem; /* Tamanho grande */
-  color: #7c3aed; /* Cor roxa */
+  color: #7c3aed;
+  font-size: 1.8rem;
 }
 
-
-/* =========================================================
-   MENSAGEM DE SUCESSO
-   Aparece quando a compra é concluída.
-   ========================================================= */
+/* SUCESSO */
 
 .modal-sucesso {
-  margin-top: 1.5rem; /* Espaço acima */
-  padding: 1.2rem; /* Espaçamento interno */
-  background: rgba(16, 185, 129, 0.1); /* Fundo verde transparente */
-  border: 1px solid #10b981; /* Borda verde */
-  border-radius: 12px; /* Cantos arredondados */
-  color: var(--text-main); /* Cor do texto */
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(16,185,129,.1);
+  border: 1px solid #10b981;
+  border-radius: 12px;
+  color: var(--text-main);
 }
-
-
-/* Título da mensagem de sucesso */
 
 .modal-sucesso h3 {
-  color: #10b981; /* Verde */
-  margin-bottom: 0.5rem; /* Espaço abaixo */
+  margin-bottom: .5rem;
+  color: #10b981;
 }
 
-
-/* Botão para voltar após a compra */
-
 .btn-sucesso-voltar {
-  margin-top: 1rem; /* Espaço acima */
-  background: #10b981; /* Fundo verde */
-  color: #ffffff; /* Texto branco */
-  border: none; /* Remove borda */
-  padding: 8px 16px; /* Espaçamento */
-  border-radius: 8px; /* Cantos arredondados */
-  cursor: pointer; /* Mãozinha */
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* PÁGINA INICIAL */
+
+.inicio-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #080014, #17002f, #3b006b);
+  color: #fff;
+}
+
+.inicio-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 60px;
+}
+
+.inicio-content {
+  width: 520px;
+}
+
+.inicio-tag {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 9px 16px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 30px;
+  color: #d9b8ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inicio-content h1 {
+  margin: 0 0 20px;
+  font-size: 60px;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.inicio-content h1 span {
+  color: #a855f7;
+}
+
+.inicio-content p {
+  max-width: 500px;
+  margin-bottom: 30px;
+  color: #d0c5dc;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* CADASTRO */
+
+.cadastro-card {
+  width: 390px;
+  padding: 35px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  transition: .3s;
+}
+
+.cadastro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0,0,0,.55);
+}
+
+.cadastro-card h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+
+.cadastro-card > p {
+  margin-bottom: 25px;
+  color: #c9bdd4;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cadastro-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.cadastro-campo label {
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cadastro-campo input {
+  width: 100%;
+  padding: 14px 15px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  transition: .3s;
+}
+
+.cadastro-campo input::placeholder {
+  color: #aaa0b4;
+}
+
+.cadastro-campo input:focus {
+  background: rgba(255,255,255,.13);
+  border-color: #a855f7;
+  box-shadow: 0 0 0 2px rgba(168,85,247,.15);
+}
+
+/* BOTÕES CADASTRO */
+
+.cadastro-button,
+.eventos-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.cadastro-button {
+  margin-top: 5px;
+  border: none;
+}
+
+.cadastro-button:hover,
+.eventos-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168,85,247,.4);
+}
+
+.eventos-button {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* CADASTRO CONCLUÍDO */
+
+.cadastro-sucesso {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.sucesso-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 8px 30px rgba(168,85,247,.35);
+}
+
+.cadastro-sucesso h2 {
+  margin-bottom: 10px;
+}
+
+.cadastro-sucesso p {
+  margin-bottom: 25px;
+  color: #d0c5dc;
+}
+
+.cadastro-sucesso strong {
+  color: #c084fc;
+}
+
+/* SENHA */
+
+.senha-container {
+  position: relative;
+  width: 100%;
+}
+
+.senha-container input {
+  padding-right: 50px;
+}
+
+.senha-olho {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  padding: 5px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.senha-olho:hover {
+  opacity: .8;
+}
+
+/* NAVBAR INICIAL */
+
+.inicio-navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: rgba(8,0,20,.45);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(15px);
+}
+
+.inicio-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.inicio-logo span {
+  color: #c084fc;
+}
+
+.navbar-eventos {
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.navbar-eventos:hover {
+  background: rgba(255,255,255,.1);
+  transform: translateY(-2px);
+}
+
+/* ESTATÍSTICAS */
+
+.inicio-stats {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat strong {
+  color: #d8b4fe;
+  font-size: 22px;
+}
+
+.stat span {
+  color: #aaa0b4;
+  font-size: 13px;
+}
+
+/* PREVIEW DO INGRESSO */
+
+.ticket-preview {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 20px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+  transition: .3s;
+}
+
+.ticket-preview:hover {
+  background: rgba(255,255,255,.1);
+  transform: translateX(5px);
+}
+
+.ticket-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(168,85,247,.18);
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.ticket-preview div:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticket-preview strong {
+  font-size: 15px;
+}
+
+.ticket-preview span {
+  color: #aaa0b4;
+  font-size: 13px;
+}
+
+.ticket-arrow {
+  color: #c084fc;
+  font-size: 24px;
+}
+
+/* ANIMAÇÃO DA PÁGINA DE EVENTOS */
+
+.home-page {
+  animation: entrarEventos .7s ease-out;
+}
+
+@keyframes entrarEventos {
+  from {
+    opacity: 0;
+    transform: scale(.96) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* TRANSIÇÃO EVENTIX */
+
+.transicao-eventix {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #080014;
+  animation: telaLigando .9s ease forwards;
+}
+
+.transicao-logo {
+  position: relative;
+  z-index: 2;
+  font-size: 70px;
+  animation: logoLigando .8s ease-out forwards;
+}
+
+.transicao-eventix span {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  animation: textoLigando .8s ease-out forwards;
+}
+
+.transicao-brilho {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 30px #c084fc,
+    0 0 80px #a855f7,
+    0 0 150px #7e22ce;
+  animation: brilhoLigando .9s ease-out forwards;
+}
+
+@keyframes telaLigando {
+  0% { opacity: 0; }
+  15%, 100% { opacity: 1; }
+}
+
+@keyframes brilhoLigando {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(8);
+    opacity: .8;
+  }
+  100% {
+    transform: scale(25);
+    opacity: 0;
+  }
+}
+
+@keyframes logoLigando {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes textoLigando {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+  .inicio-hero {
+    flex-direction: column;
+    gap: 45px;
+    padding: 40px 20px;
+  }
+
+  .inicio-content {
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .inicio-content h1 {
+    font-size: 45px;
+  }
+
+  .inicio-content p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastro-card {
+    width: 100%;
+    max-width: 390px;
+  }
+}
+
+@media (max-width: 850px) {
+  .inicio-navbar {
+    padding: 0 25px;
+  }
+
+  .inicio-stats {
+    justify-content: center;
+  }
+
+  .ticket-preview {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .inicio-content h1 {
+    font-size: 38px;
+  }
+
+  .inicio-content p {
+    font-size: 16px;
+  }
+
+  .cadastro-card {
+    padding: 25px;
+  }
+
+  .inicio-logo {
+    font-size: 21px;
+  }
+
+  .navbar-eventos {
+    font-size: 14px;
+  }
+
+  .inicio-stats {
+    gap: 20px;
+  }
+
+  .stat strong {
+    font-size: 19px;
+  }
+
+  .ticket-preview {
+    padding: 14px;
+  }
+}
+
+/*  PÁGINA SOBRE NÓS*/
+
+.sobre-container {
+  min-height: 100vh;
+  padding: 80px 8%;
+  background: var(--background-color, #0f172a);
+  color: var(--text-color, #ffffff);
+}
+
+/* Título principal */
+.sobre-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sobre-hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.sobre-hero p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Conteúdo */
+.sobre-conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sobre-conteudo h2 {
+  font-size: 30px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.sobre-conteudo > p {
+  font-size: 17px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* Cards */
+.sobre-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.sobre-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: 0.3s;
+}
+
+.sobre-card:hover {
+  transform: translateY(-8px);
+}
+
+.sobre-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.sobre-card p {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+/*  RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 50px 6%;
+  }
+
+  .sobre-hero h1 {
+    font-size: 36px;
+  }
+
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   CARDS DA EQUIPE
+========================= */
+
+.equipe-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.equipe-titulo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.equipe-titulo h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.equipe-titulo p {
+  font-size: 17px;
+  opacity: 0.75;
+}
+
+/* Área dos cards */
+.equipe-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Card individual */
+.equipe-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px 25px;
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.equipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Foto */
+.equipe-foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid rgba(255, 255, 255, 0.8);
+
+  margin-bottom: 20px;
+}
+
+/* Nome */
+.equipe-card h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Cargo */
+.equipe-cargo {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 25px;
+}
+
+/* Área dos botões */
+.equipe-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Botões */
+.equipe-links a {
+  text-decoration: none;
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.equipe-links a:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Email */
+.equipe-email {
+  display: block;
+  margin-top: 20px;
+
+  font-size: 14px;
+  opacity: 0.7;
+
+  word-break: break-word;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 600px) {
+  .equipe-container {
+    padding: 40px 15px;
+  }
+
+  .equipe-titulo h1 {
+    font-size: 32px;
+  }
+
+  .equipe-cards {
+    grid-template-columns: 1fr;
+  }
 }

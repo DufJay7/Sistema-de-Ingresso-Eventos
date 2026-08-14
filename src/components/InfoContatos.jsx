@@ -7,7 +7,6 @@ function InfoContato() {
 
       <div className="equipe-titulo">
         <h1>Nossa Equipe</h1>
-
         <p>
           Conheça os desenvolvedores responsáveis pelo projeto.
         </p>
@@ -52,13 +51,11 @@ function InfoContato() {
                 </a>
               )}
 
-              {pessoa.email && (
-                <a href={`mailto:${pessoa.email}`}>
-                  Email
-                </a>
-              )}
-
             </div>
+
+            <span className="equipe-email">
+              {pessoa.email}
+            </span>
 
           </div>
         ))}

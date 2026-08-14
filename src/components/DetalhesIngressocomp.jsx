@@ -2,138 +2,111 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { eventos } from '../data/ingresso';
 
-function DetalhesIngresso() {
+export default function DetalhesIngressocomp() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [quantidade, setQuantidade] = useState(1);
-  const [compraRealizada, setCompraRealizada] = useState(false);
-
-  // Procura o evento pelo ID recebido na URL
   const evento = eventos.find(
-    (evento) => String(evento.id) === String(id)
+    (item) => String(item.id) === String(id)
   );
 
-  // Caso o evento não exista
+  const [quantidade, setQuantidade] = useState(1);
+  const [comprado, setComprado] = useState(false);
+
   if (!evento) {
     return (
       <div className="container">
-        <div
-          style={{
-            textAlign: 'center',
-            padding: '4rem 1rem'
-          }}
+        <h2>Evento não encontrado</h2>
+
+        <button
+          onClick={() => navigate('/eventos')}
+          className="btn-voltar-topo"
         >
-          <h2>Evento não encontrado</h2>
-
-          <p
-            style={{
-              color: 'var(--text-secondary)',
-              marginTop: '1rem'
-            }}
-          >
-            O evento que você está procurando não existe.
-          </p>
-
-          <button
-            onClick={() => navigate('/')}
-            style={{
-              marginTop: '1.5rem',
-              background: 'var(--primary)',
-              color: '#ffffff',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              cursor: 'pointer'
-            }}
-          >
-            Voltar para eventos
-          </button>
-        </div>
+          ← Voltar para eventos
+        </button>
       </div>
     );
   }
 
-  // Calcula o valor total
-  const total = evento.preco * quantidade;
-
-  // Aumenta a quantidade
+  // Aumentar quantidade
   const aumentarQuantidade = () => {
-    setQuantidade((qtd) => qtd + 1);
+    setQuantidade((atual) => atual + 1);
   };
 
-  // Diminui a quantidade
+  // Diminuir quantidade
   const diminuirQuantidade = () => {
-    setQuantidade((qtd) => {
-      if (qtd > 1) {
-        return qtd - 1;
+    setQuantidade((atual) => {
+      if (atual <= 1) {
+        return 1;
       }
 
-      return qtd;
+      return atual - 1;
     });
   };
 
-  // Finaliza a compra
-  const finalizarCompra = () => {
-    setCompraRealizada(true);
+  // Preço unitário
+  const precoUnitario = Number(evento.preco);
+
+  // Cálculo do total
+  const total = precoUnitario * quantidade;
+
+  // Finalizar compra
+  const handleFinalizar = () => {
+    setComprado(true);
   };
 
   return (
-    <main className="container detalhe-container">
+    <div className="container detalhe-container">
 
-      {/* Botão para voltar */}
+      {/* Voltar para eventos */}
       <button
+        onClick={() => navigate('/eventos')}
         className="btn-voltar-topo"
-        onClick={() => navigate('/')}
       >
         ← Voltar para eventos
       </button>
 
       <div className="detalhe-grid">
 
-        {/* Imagem do evento */}
-        <div>
+        {/* Imagem */}
+        <div className="detalhe-midia">
           <img
-            className="detalhe-img"
             src={evento.imagem}
             alt={evento.nome}
+            className="detalhe-img"
           />
         </div>
 
-        {/* Informações do evento */}
-        <div>
+        {/* Informações */}
+        <div className="detalhe-info">
 
-          {/* Categoria */}
           <span className="badge-categoria">
             {evento.categoria}
           </span>
 
-          {/* Nome do evento */}
           <h1 className="detalhe-titulo">
             {evento.nome}
           </h1>
 
-          {/* Informações */}
           <div className="detalhe-meta">
 
             <p>
-              <strong>📍 Local:</strong>{' '}
-              {evento.local}
+              📍 <strong>Local:</strong> {evento.local}
             </p>
 
             <p>
-              <strong>📅 Data:</strong>{' '}
+              📅 <strong>Data:</strong>{' '}
               {evento.data} {evento.mes}
             </p>
 
             <p>
-              <strong>🎟️ Preço:</strong>{' '}
-              R$ {Number(evento.preco).toFixed(2)}
+              👥 <strong>Capacidade:</strong>{' '}
+              {Number(evento.capacidade).toLocaleString('pt-BR')} pessoas
             </p>
 
             <p>
-              <strong>👥 Capacidade:</strong>{' '}
-              {evento.capacidade || 'Informação não disponível'}
+              🏷️ <strong>Preço unitário:</strong>{' '}
+              R$ {precoUnitario.toFixed(2).replace('.', ',')}
             </p>
 
           </div>
@@ -142,15 +115,16 @@ function DetalhesIngresso() {
           <div className="checkout-box">
 
             <h2>
-              Comprar ingressos
+              Selecione a quantidade de ingressos
             </h2>
 
-            {/* Quantidade */}
+            {/* Contador */}
             <div className="contador-container">
 
               <button
-                className="btn-qtd"
+                type="button"
                 onClick={diminuirQuantidade}
+                className="btn-qtd"
               >
                 -
               </button>
@@ -160,66 +134,90 @@ function DetalhesIngresso() {
               </span>
 
               <button
-                className="btn-qtd"
+                type="button"
                 onClick={aumentarQuantidade}
+                className="btn-qtd"
               >
                 +
               </button>
 
             </div>
 
+            {/* TESTE DO CÁLCULO */}
+            <div
+              style={{
+                marginTop: '15px',
+                padding: '10px',
+                borderRadius: '8px',
+                background: '#1a1629',
+                fontSize: '14px'
+              }}
+            >
+              <p>
+                Quantidade: <strong>{quantidade}</strong>
+              </p>
+
+              <p>
+                Preço: <strong>
+                  R$ {precoUnitario.toFixed(2).replace('.', ',')}
+                </strong>
+              </p>
+
+              <p>
+                Total calculado: <strong>
+                  R$ {total.toFixed(2).replace('.', ',')}
+                </strong>
+              </p>
+            </div>
+
             {/* Total */}
             <div className="total-box">
 
-              <span>
-                Total
-              </span>
+              <span>Total:</span>
 
-              <strong className="total-valor">
-                R$ {total.toFixed(2)}
-              </strong>
+              <h3 className="total-valor">
+                R$ {total.toFixed(2).replace('.', ',')}
+              </h3>
 
             </div>
 
-            {/* Botão comprar */}
+            {/* Finalizar compra */}
             <button
-              className="buttom-detalhes"
-              onClick={finalizarCompra}
+              type="button"
+              onClick={handleFinalizar}
+              className="buttom-detalhes btn-comprar"
             >
-              Comprar Ingresso
+              Finalizar Compra
             </button>
 
           </div>
 
-          {/* Mensagem de sucesso */}
-          {compraRealizada && (
+          {/* Compra realizada */}
+          {comprado && (
             <div className="modal-sucesso">
 
               <h3>
-                Compra realizada! 🎉
+                🎉 Compra realizada com sucesso!
               </h3>
 
               <p>
-                Seu ingresso para <strong>{evento.nome}</strong> foi
-                reservado com sucesso.
+                Você comprou {quantidade} ingresso(s) para{' '}
+                <strong>{evento.nome}</strong>.
               </p>
 
               <button
+                type="button"
+                onClick={() => navigate('/eventos')}
                 className="btn-sucesso-voltar"
-                onClick={() => navigate('/')}
               >
-                Voltar para eventos
+                Voltar para a lista de eventos
               </button>
 
             </div>
           )}
 
         </div>
-
       </div>
-
-    </main>
+    </div>
   );
 }
-
-export default DetalhesIngresso;
