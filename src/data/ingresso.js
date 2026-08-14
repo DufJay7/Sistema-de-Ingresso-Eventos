@@ -223,7 +223,7 @@ export const eventos = [
     preco: 580.00,
     data: "21",
     mes: "Setembro",
-    imagem: "https://cdn.getcrowder.com/images/3c13f458-5f23-4135-8ff2-507b25171dd6-theweeknd20261920x720landing.gif"
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbO45WBMAo-iU0Z_rBwQkKC9QTRThKuCo6I9U3gLPOHA&s=10"
   },
   {
     id: 21,
@@ -245,7 +245,7 @@ export const eventos = [
     preco: 390.00,
     data: "25",
     mes: "Novembro",
-    imagem: "https://www.thatericalper.com/wp-content/uploads/2024/10/download-1-5.jpg"
+    imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm7yLPvgl_zLH0oA-VLuto7Y9rplOeOsZgqiflKAz_-A&s=10"
   },
   {
     id: 23,
