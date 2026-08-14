@@ -191,7 +191,7 @@ function SobreNos() {
           experiência.
         </p>
 
-        <a href="/" className="sobre-button">
+        <a href="./eventos" className="sobre-button">
           Ver eventos
           <span>→</span>
         </a>
