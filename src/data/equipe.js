@@ -2,7 +2,7 @@ const equipe = [
   {
     nome: "Antony Gabriel",
     cargo: "Dev. Sistemas",
-    foto: "https://i.imgflip.com/5opfk3.jpg",
+    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ESCZCVqSq9nQFej2iDMsM1UVgfnBn78G8GWn8YtBzr4xZosY_9jArLU&s=10",
     linkedin: "https://www.linkedin.com/in/antony-gabriel-dev/",
     github: "https://github.com/Antonyx78",
     email: "antonygabrielsm@gmail.com"
