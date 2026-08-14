@@ -376,6 +376,7 @@
 .sobre-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
+  background-color: #100133;
 }
 
 .sobre-button span {
