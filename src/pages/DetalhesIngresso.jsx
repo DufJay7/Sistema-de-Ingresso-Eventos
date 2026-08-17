@@ -3,10 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { eventos } from '../data/ingresso';
 
 export default function DetalhesIngresso() {
+
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Busca o evento pelo id do parâmetro da rota
+  // Busca o evento pelo id do parâmetro da roota
   const evento = eventos.find((item) => String(item.id) === String(id)) || eventos[0];
 
   const [quantidade, setQuantidade] = useState(1);
