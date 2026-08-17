@@ -23,6 +23,15 @@ const equipe = [
     github: "https://github.com/DufJay7",
     email: "danieldufjay@hotmail.com"
 
+  },
+
+  {
+    nome: "Breno dos Reis Gomes ",
+    cargo: "dev. sisteemas",
+    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0iDEHevZDyp_SFMU7YCvM9SvgrK2ab0eu3L86u6121Q&s=10",
+    linkedin: "",
+    github: "https://github.com/itsbrenin",
+    email: "brenindosreis289@gmail.com"
   }
 ];
 
