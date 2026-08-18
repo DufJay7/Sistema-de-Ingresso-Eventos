@@ -32,6 +32,14 @@ const equipe = [
     linkedin: "",
     github: "https://github.com/itsbrenin",
     email: "brenindosreis289@gmail.com"
+  },
+  {
+    nome: "Danilo Oliveira ",
+    cargo: "Dev. Sistemas",
+    foto: "https://pbs.twimg.com/media/HD9euOCWwAAdTn5.jpg",
+    linkedin: "",
+    github: "https://github.com/felipenetofefe105-bot",
+    email: "danilogaudencio12@gmai.com"
   }
 ];
 
